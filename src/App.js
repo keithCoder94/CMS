@@ -6,8 +6,7 @@ import {Appointment} from './Components/Appointment';
 import {Doctors} from './Components/Doctors';
 import {DoctorsForm} from './Components/DoctorsForm';
 import {Patients} from './Components/Patients';
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 function App() {
   return (
