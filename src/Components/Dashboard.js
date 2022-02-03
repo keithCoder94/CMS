@@ -1,5 +1,6 @@
 import React from 'react';
 // import './App.css';
+import { Link } from 'react-router-dom'
 
 
 export const Dashboard = () => {
@@ -9,7 +10,9 @@ export const Dashboard = () => {
                 <h1 className="heading">CyberPharm</h1>
                 <div className="screens">
                     <button className="dashboard">Dashboard</button>
-                    <button className="appt">Appointment</button>
+                    <nav>
+                        <Link to="Appointment" className="appt">Appointment</Link>
+                    </nav>
                     <button className="doctor">Doctors</button>
                     <button className="doctor">Patients</button>
                 </div>

@@ -1,9 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import './App.css';
 import nurse from '../../src/nurse.jpg';
+import { Link } from 'react-router-dom';
+import { login } from '../Auth/SignUp';
+
+
 
 
 export const LogIn = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const Register = (() => {
+        console.log(email, password)
+       login(email, password)
+    })
 
     return (
         <div>
@@ -18,6 +30,7 @@ export const LogIn = () => {
                                 <input
                                     type="text"
                                     style={{ width: "200px" }}
+                                    onChangeText={(email) => setEmail(email.target.value)}
 
                                 />
                             </label>
@@ -27,12 +40,20 @@ export const LogIn = () => {
                                 <input
                                     type="text"
                                     style={{ width: "200px" }}
+                                    onChangeText={(password) => setPassword(password.target.value)}
 
                                 />
                             </label>
                         </form>
-                        <p className="text">Don't have an account?  <p style={{ color: "white" }}>Sign Up</p></p>
-                        <button className="btn">LOGIN</button>
+                        <p className="text">Don't have an account?  
+                            <nav>
+                            <Link to="SignUp"  style={{ color: "white" }}>Sign Up</Link>
+                        </nav>
+                        </p>
+                        <nav>
+                            <Link to="Dashboard" className="btn"  onClick={Register}>LOGIN</Link>
+                        </nav>
+                       
 
                     </div>
                 </div>

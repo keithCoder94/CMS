@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { LogIn } from './Components/LogIn';
 import {SignUp} from './Components/SignUp';
 import { Dashboard } from './Components/Dashboard';
@@ -10,16 +12,17 @@ import {Patients} from './Components/Patients';
 
 function App() {
   return (
-   <div className="App">
-     <LogIn/>
-     <SignUp/>
-     <Dashboard/>
-     <Appointment/>
-     <Doctors/>
-     <DoctorsForm/>
-     <Patients/>
- 
-   </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<LogIn/>}/>
+      <Route path='SignUp' element={<SignUp/>}/>
+      <Route path='Dashboard' element={<Dashboard/>}/>
+      <Route path='Appointment' element={<Appointment/>}/>
+      <Route path='Doctors' element={<Doctors/>}/>
+      <Route path='DoctorsForm' element={<DoctorsForm/>}/>
+      <Route path='Patients' element={<Patients/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
