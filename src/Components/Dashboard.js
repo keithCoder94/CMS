@@ -1,9 +1,23 @@
-import React from 'react';
-// import './App.css';
+import React, { useState } from 'react';
+import '../App.css';
 import { Link } from 'react-router-dom'
-
+import { db } from '../Config/Firebase';
 
 export const Dashboard = () => {
+
+    const [doctor, setDoctor] = useState()
+
+    const Doctors = () => {
+        db.collection('Doctors')
+            .onSnapshot((snapshot) => {
+                const dis = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }))
+                setDoctor(dis)
+            })
+    }
+
     return (
         <div>
             <div className="header">
@@ -72,89 +86,89 @@ export const Dashboard = () => {
 </svg> */}
                         </div>
                         <h5 style={{ marginLeft: "10px" }}>Entries</h5>
-                        <h5 style={{marginLeft:"300px"}}>Search:</h5>
-                        <input 
-                    type="text" 
-                    // placeholder="Search name" 
-                   
-                    />
-                        
+                        <h5 style={{ marginLeft: "300px" }}>Search:</h5>
+                        <input
+                            type="text"
+                        // placeholder="Search name" 
+
+                        />
+
                     </div>
                     <div className="bar">
                         <h6>Doctors Name</h6>
-                        <h6 style={{marginLeft:"110px"}}>Doctor Based On</h6>
-                        <h6 style={{marginLeft:"110px"}}>Treatments</h6>
-                        <h6 style={{marginLeft:"110px"}}>Reviews</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Doctor Based On</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Treatments</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Reviews</h6>
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Dr. Bellamy Nicholas</h6>
-                        <h6 style={{marginLeft:"90px"}}>Subscription</h6>
-                        <h6 style={{marginLeft:"110px"}}>Women's Health</h6>
-                        <h6 style={{marginLeft:"100px"}}>*****</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Dr. Bellamy Nicholas</h6>
+                        <h6 style={{ marginLeft: "90px" }}>Subscription</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Women's Health</h6>
+                        <h6 style={{ marginLeft: "100px" }}>*****</h6>
+
                     </div>
-                  <div className="show">
-                  <p className="text3">Showing 1 To 9 Of 9 Entries</p>
-                  </div>
-                  
+                    <div className="show">
+                        <p className="text3">Showing 1 To 9 Of 9 Entries</p>
+                    </div>
+
                 </div>
-               
+
                 <div className="doctors-list">
                     <h4 className="name">Latest Patients List</h4>
                     <hr style={{ width: "750px", marginLeft: "30px" }} />
@@ -170,97 +184,97 @@ export const Dashboard = () => {
 </svg> */}
                         </div>
                         <h5 style={{ marginLeft: "10px" }}>Entries</h5>
-                        <h5 style={{marginLeft:"300px"}}>Search:</h5>
-                        <input 
-                    type="text" 
-                    // placeholder="Search name" 
-                   
-                    />
-                        
+                        <h5 style={{ marginLeft: "300px" }}>Search:</h5>
+                        <input
+                            type="text"
+                        // placeholder="Search name" 
+
+                        />
+
                     </div>
                     <div className="bar">
                         <h6>Patients Name</h6>
-                        <h6 style={{marginLeft:"110px"}}>Phone</h6>
-                        <h6 style={{marginLeft:"110px"}}>Email</h6>
-                        <h6 style={{marginLeft:"110px"}}>Gender</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Phone</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Email</h6>
+                        <h6 style={{ marginLeft: "110px" }}>Gender</h6>
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
                     <div className="names">
-                        <h6 style={{color:"rgba(5, 78, 222, 0.7)"}}>Olorato Pule</h6>
-                        <h6 style={{marginLeft:"90px"}}>123456789</h6>
-                        <h6 style={{marginLeft:"110px"}}>olorato@gmail.com</h6>
-                        <h6 style={{marginLeft:"100px"}}>Female</h6>
-                        
+                        <h6 style={{ color: "rgba(5, 78, 222, 0.7)" }}>Olorato Pule</h6>
+                        <h6 style={{ marginLeft: "90px" }}>123456789</h6>
+                        <h6 style={{ marginLeft: "110px" }}>olorato@gmail.com</h6>
+                        <h6 style={{ marginLeft: "100px" }}>Female</h6>
+
                     </div>
-                   
-                  <div className="show">
-                  <p className="text3">Showing 1 To 9 Of 9 Entries</p>
-                  </div>
-                  
+
+                    <div className="show">
+                        <p className="text3">Showing 1 To 9 Of 9 Entries</p>
+                    </div>
+
                 </div>
-               
+
 
             </div>
 

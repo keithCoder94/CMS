@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-// import './App.css';
+import React, { useState } from 'react';
+import '../App.css';
 import nurse from '../../src/nurse.jpg';
 import { Link } from 'react-router-dom';
 import { Login } from '../Auth/SignUp';
@@ -14,7 +14,7 @@ export const LogIn = () => {
 
     const Register = (() => {
         console.log(email, password)
-       Login(email, password)
+        Login(email, password)
     })
 
     return (
@@ -31,7 +31,6 @@ export const LogIn = () => {
                                     type="text"
                                     style={{ width: "200px" }}
                                     onChangeText={(email) => setEmail(email.target.value)}
-
                                 />
                             </label>
                         </form>
@@ -45,15 +44,15 @@ export const LogIn = () => {
                                 />
                             </label>
                         </form>
-                        <p className="text">Don't have an account?  
+                        <p className="text">Don't have an account?
                             <nav>
-                            <Link to="SignUp"  style={{ color: "white" }}>Sign Up</Link>
-                        </nav>
+                                <Link to="SignUp" style={{ color: "white" }}>Sign Up</Link>
+                            </nav>
                         </p>
                         <nav>
-                            <Link className="btn"  onClick={Register}>LOGIN</Link>
+                            <Link className="btn" onClick={Register}>LOGIN</Link>
                         </nav>
-                       
+
 
                     </div>
                 </div>

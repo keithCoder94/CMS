@@ -1,7 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 // import './App.css'
+import { db } from '../Config/Firebase';
 
 export const Appointment = () => {
+
+    const viewAppointment =()=>{
+        db.collection('Appointment').doc("doctor@email.com").collection('bookings')
+        .onSnapshot((snapshot) => {
+            const dis = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            setDoctor(dis)
+        })
+    }
+
     return (
         <div>
             <div className="header">
