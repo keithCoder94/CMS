@@ -1,16 +1,16 @@
-import {firebase} from '../Config/Firebase';
+import { firebase } from '../Config/Firebase';
+import { useNavigate } from 'react-router-dom'
 
+const sinup = ((email, password) => {
 
-const sinup =((email , password)=>{
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+  firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
 
       firebase.firestore().collection('Doctors').add({
-          email:email ,
-          password:password
+        email: email,
+        password: password
       })
 
 
@@ -29,26 +29,26 @@ const sinup =((email , password)=>{
 })
 
 
-const login =((email , password)=>{
+const Login = ((email, password) => {
+  const navigate = useNavigate()
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+  firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
 
       firebase.firestore().collection('Doctors').add({
-          email:email ,
-          password:password
+        email: email,
+        password: password
       })
+      navigate('/Dashboard')
 
-
-      alert("gggvgv")
+      alert("Logged In")
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage)
       // ..
 
       alert("error")
@@ -60,4 +60,4 @@ const login =((email , password)=>{
 
 
 
-export {sinup, login}
+export { sinup, Login }

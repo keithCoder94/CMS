@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 // import './App.css';
 import nurse from '../../src/nurse.jpg';
 import { Link } from 'react-router-dom';
-import { login } from '../Auth/SignUp';
+import { Login } from '../Auth/SignUp';
 
 
 
@@ -14,7 +14,7 @@ export const LogIn = () => {
 
     const Register = (() => {
         console.log(email, password)
-       login(email, password)
+       Login(email, password)
     })
 
     return (
@@ -51,7 +51,7 @@ export const LogIn = () => {
                         </nav>
                         </p>
                         <nav>
-                            <Link to="Dashboard" className="btn"  onClick={Register}>LOGIN</Link>
+                            <Link className="btn"  onClick={Register}>LOGIN</Link>
                         </nav>
                        
 
