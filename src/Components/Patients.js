@@ -1,5 +1,6 @@
 import React from 'react';
 // import './App.css'
+import { Link } from 'react-router-dom';
 
 export const Patients = () => {
     return (
@@ -7,10 +8,10 @@ export const Patients = () => {
             <div className="header">
                 <h1 className="heading">CyberPharm</h1>
                 <div className="screens">
-                    <button className="dashboard">Dashboard</button>
-                    <button className="appt">Appointment</button>
-                    <button className="doctor">Doctors</button>
-                    <button className="doctor">Patients</button>
+                <Link to="/Dashboard" className="dashboard">Dashboard</Link>
+                <Link to="/Appointment" className="appt">Appointment</Link>
+                <Link to="/Doctors" className="doctor">Doctors</Link>
+                <Link to="/Patients" className="doctor">Patients</Link>
                 </div>
             </div>
             <p className="text2">Patients</p>

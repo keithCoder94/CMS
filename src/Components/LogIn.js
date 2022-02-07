@@ -47,6 +47,7 @@ export const LogIn = () => {
                         <p className="text">Don't have an account?
                             <nav>
                                 <Link to="SignUp" style={{ color: "white" }}>Sign Up</Link>
+                                <Link to="SignUp" style={{ color: "white" }}>Sign Up</Link>
                             </nav>
                         </p>
                         <nav>
